@@ -56,3 +56,39 @@ public:
         return n;
     }
 };
+
+
+
+// method -2  1 pass solution
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int k=1;
+        int prev=0;
+        for(int i=1; i<nums.size();i++)
+        {
+            if(nums[i] != nums[prev] )
+            {
+                nums[k]=nums[i];
+                prev=i;
+                k++;
+            }
+            else if(nums[i] == nums[prev])
+            {
+                // no chnage in prev
+                if(i-prev>1) 
+                {
+                    continue;
+                }
+                else 
+                {
+                    nums[k]=nums[i];
+                    k++;
+                }
+            }
+           
+        }
+        return k;
+
+    }
+};
