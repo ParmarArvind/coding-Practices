@@ -1,0 +1,29 @@
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        unordered_map<char,char>pair1;
+        for(int i=0;i<s.size();i++)
+        {
+            if(pair1[s[i]])
+            {
+                if(pair1[s[i]] != t[i] ) return false;
+            }
+            else
+            pair1[s[i]]=t[i];
+        }
+        // check for vice versa pair
+        unordered_map<char,char>pair2;
+        for(int i=0;i<s.size();i++)
+        {
+            if(pair2[t[i]])
+            {
+                if(pair2[t[i]] != s[i] ) return false;
+            }
+            else
+            pair2[t[i]]=s[i];
+        }
+
+        // return true if both checks properly
+        return 1;
+    }
+};
