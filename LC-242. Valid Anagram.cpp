@@ -1,4 +1,4 @@
-// ethod-1 comparing  freq of characters O(26) i.e. constant extra space and O(n) time 
+// method-1 comparing  freq of characters O(26) i.e. constant extra space and O(n) time 
 class Solution {
 public:
     bool isAnagram(string s, string t) {
